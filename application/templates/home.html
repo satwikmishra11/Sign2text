@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign2Text | An AI-based Sign Language Recognition System</title>
+        <style>
+        h1 {
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+        video {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 0px;
+            transform: scaleX(-1); /* Mirror the video horizontally */
+        }
+        #gesture {
+            text-align: center;
+            margin-top: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        p {
+            text-align: center;
+            margin: 0px;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Sign2Text | V0.1</h1>
+        <video id="video" width="640" height="480" autoplay></video>
+        <div id="gesture">Starting the webcam, this may take a few seconds...</div>
+        <p>Developed by: Nth Times The Charm | HackKRMU 2024</p>
+        <p style="font-size: .8em;">Note: This is a prototype version of Sign2Text. The accuracy of the system can fluctate a lot due to the limited training data (3000+ Images). 
+        <script>
+        // Send a POST request to the API every 2 seconds
+        function sendImage() {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataURL = canvas.toDataURL('image/jpeg');
+            const blob = dataURItoBlob(dataURL);
+            const formData = new FormData();
+            formData.append('inputImage', blob, 'image.jpg');
+            fetch('/api/v2/detect-sign-language', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status == 'success') {
+                    document.getElementById('gesture').style.color = "green";   
+                    document.getElementById('gesture').innerText = `Gesture: ${data.gesture} | Confidence: ${data.confidence}`;
+                }
+                else{
+                document.getElementById('gesture').innerText = `Oops! The hand was not detected. Please try placing your hand in the frame.`;document.getElementById('gesture').style.color = "red";
+
+                }
+            });
+        }
+
+
+        // Function to convert data URI to Blob
+        function dataURItoBlob(dataURI) {
+            var byteString = atob(dataURI.split(',')[1]);
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([ab], { type: mimeString });
+        }
+
+        // Get the video stream from the webcam
+        const video = document.getElementById('video');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+                setInterval(sendImage, 2000);
+            })
+            .catch(err => {
+                alert('Access to webcam was denied, please allow access to the webcam and refresh the page.');
+            });
+    </script>
+    </body>
+</html>
