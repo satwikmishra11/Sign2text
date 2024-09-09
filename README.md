@@ -51,7 +51,6 @@ Sign2Text was developed by the following team members during the  CODEFORCAUSE2.
 - Satwik Mishra
 - Yash Wardhan
 - Pulkit Pandey
-- Shubham Chadda
 
 ## Conclusion
 Thank you for the amazing opportunity to participate in the   CODEFORCAUSE2.0 Hackathon. We are excited to present Sign2Text and look forward to your feedback and suggestions. We hope that Sign2Text will help bridge the communication gap between the hearing-impaired and the general population, making the world a more inclusive and accessible place for everyone utilizing the untapped potential of AI and computer vision.
