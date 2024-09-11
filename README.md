@@ -47,7 +47,7 @@ Please keep in mind that Sign2Text's accuracy may vary based on environmental fa
 We value your feedback! If you encounter any issues or have suggestions for improvement, please don't hesitate to reach out to us.
 
 ## Team Information
-Sign2Text was developed by the following team members during the  CODEFORCAUSE2.0 Hackathon:
+Sign2Text was developed by the following team members during the CODEFORCAUSE2.0 Hackathon:
 - Satwik Mishra
 - Yash Wardhan
 - Pulkit Pandey
