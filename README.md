@@ -1,4 +1,4 @@
-# CODEFORCAUSE2.0 Hackathon Project: Sign2Text - Sign Language Translation Application
+# HackKrmu3.0 Hackathon Project: Sign2Text - Sign Language Translation Application
 
 ![Screenshot Of Sign2Text](https://ather.om-mishra.com/downloads/Sign2Text.jpeg)
 
@@ -47,10 +47,10 @@ Please keep in mind that Sign2Text's accuracy may vary based on environmental fa
 We value your feedback! If you encounter any issues or have suggestions for improvement, please don't hesitate to reach out to us.
 
 ## Team Information
-Sign2Text was developed by the following team members during the CODEFORCAUSE2.0 Hackathon:
+Sign2Text was developed by the following team members during the HackKrmu3.0 Hackathon:
 - Satwik Mishra
-- Yash Wardhan
-- Pulkit Pandey
+- Laxman Singh
+- Om Mishra
 
 ## Conclusion
-Thank you for the amazing opportunity to participate in the   CODEFORCAUSE2.0 Hackathon. We are excited to present Sign2Text and look forward to your feedback and suggestions. We hope that Sign2Text will help bridge the communication gap between the hearing-impaired and the general population, making the world a more inclusive and accessible place for everyone utilizing the untapped potential of AI and computer vision.
+Thank you for the amazing opportunity to participate in the HackKrmu3.0 Hackathon. We are excited to present Sign2Text and look forward to your feedback and suggestions. We hope that Sign2Text will help bridge the communication gap between the hearing-impaired and the general population, making the world a more inclusive and accessible place for everyone utilizing the untapped potential of AI and computer vision.
