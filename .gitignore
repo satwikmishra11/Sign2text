@@ -1,0 +1,4 @@
+/.vscode
+/.hypothesis
+app/.env
+.env
