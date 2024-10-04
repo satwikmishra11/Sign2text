@@ -1,4 +1,4 @@
-# HackKrmu3.0 Hackathon Project: Sign2Text - Sign Language Translation Application
+# HackKrmu3.0 Hackathon Project:- Sign2Text - Sign Language Translation Application
 
 ![Screenshot Of Sign2Text](https://ather.om-mishra.com/downloads/Sign2Text.jpeg)
 
